@@ -41,7 +41,9 @@ INSTANT_ALERTS = True   # email immediately when a new match appears
 
 # ----------------- EMAIL (from GitHub Secrets) -----------------
 EMAIL_FROM = os.environ.get("EMAIL_FROM", "")
-EMAIL_TO = os.environ.get("EMAIL_TO", "")
+# EMAIL_TO can be one address or several separated by commas,
+# e.g. "you@gmail.com, dad@gmail.com"
+EMAIL_TO = [a.strip() for a in os.environ.get("EMAIL_TO", "").split(",") if a.strip()]
 EMAIL_APP_PASSWORD = os.environ.get("EMAIL_APP_PASSWORD", "")
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
@@ -78,11 +80,11 @@ def send_email(subject, body):
     msg = MIMEText(body)
     msg["Subject"] = subject
     msg["From"] = EMAIL_FROM
-    msg["To"] = EMAIL_TO
+    msg["To"] = ", ".join(EMAIL_TO)
     with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as s:
         s.starttls()
         s.login(EMAIL_FROM, EMAIL_APP_PASSWORD)
-        s.send_message(msg)
+        s.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
     print(f"[email] sent: {subject}")
 
 
