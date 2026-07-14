@@ -56,5 +56,16 @@
    "hours": null,
    "found_at": "06:17 PM"
   }
+ ],
+ "2026-07-14": [
+  {
+   "url": "https://www.craigslist.org/view/d/sewell-yamaha-ho-18/m5sHbg3c3QcjkHGnRF5T3B",
+   "title": "YAMAHA HO 1.8",
+   "price": 8700,
+   "location": "Sewell NJ",
+   "region": "baltimore",
+   "hours": 89,
+   "found_at": "04:41 PM"
+  }
  ]
 }
