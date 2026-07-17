@@ -78,5 +78,16 @@
    "hours": 5,
    "found_at": "08:15 PM"
   }
+ ],
+ "2026-07-17": [
+  {
+   "url": "https://www.craigslist.org/view/d/lewes-2019-yamaha-ex-deluxe-waverunner/82ydSa1fXFQdhfFz4rHVoT",
+   "title": "2019 Yamaha ex deluxe waverunner",
+   "price": 7400,
+   "location": "Lewes",
+   "region": "delaware",
+   "hours": 16,
+   "found_at": "04:16 PM"
+  }
  ]
 }
